@@ -1,0 +1,26 @@
+<h1> New page </h1>
+
+
+
+<%= form_for @company do |f| %>
+
+<% if @company.errors.any? %>
+<h2>  The following error prevented the company to be created</h2>
+  <ul>
+    <% @company.errors.full_messages.each do |msg| %>
+  <li> <%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
+<p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+</p>
+
+
+<%= f.submit %>
+
+<% end %>
+<%= link_to "Back Listing Companies", companies_path %>

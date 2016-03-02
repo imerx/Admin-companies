@@ -1,0 +1,11 @@
+<h1><%= @company.name %></h1>
+
+<p>
+   name: <%= @company.name %>
+</p>
+
+
+<div>
+<%= link_to 'Edit company', edit_company_path(@company) %> |
+<%= link_to 'Back ', companies_path %> 
+</div>
