@@ -1,31 +1,26 @@
 
-<% form_for @product do |t| %>
+<div id="product-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><%= title %></h4>
+      </div>
+      <%= form_for @product, remote: true do |f| %>
+        <div class="modal-body">
+          <div class="alert alert-danger" role="alert" style="display: none;"></div>
+          <div class="form-group">
+            <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre del producto" %>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :price, class: "form-control input-lg", placeholder: "Precio del producto" %>
+          </div>
+        </div>
 
-<% if @product.errors.any? %>
-<h2>  The following error prevented the product to be created</h2>
-  <ul>
-    <% @product.errors.full_messages.each do |msg| %>
-  <li> <%= msg %></li>
-  <% end %>
-  </ul>
-<% end %>
-
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email">
-  </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd">
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-
-
-
-
-<% end %>
+        <div class="modal-footer">
+          <%= f.submit class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      <% end %>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

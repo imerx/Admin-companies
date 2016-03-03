@@ -4,11 +4,13 @@
    <br>
    
    <div class="row">
-      <% @companies.each do |company| %>
+      <% 	@companies.each do |company| %>
           <div class="col-sm-4">
-             <%= link_to (image_tag "http://placehold.it/150x80?text=IMAGE", :alt =>  "Bakery", :class =>"img-responsive md-image"), company_path(company) %>
+             <%= link_to (image_tag "http://placehold.it/150x80?text=IMAGE", :alt =>  "image", :class =>"img-responsive md-image"), company_path(company) %>
              <p> <%= company.name %></p>
+             <td><%= link_to 'Delete', company_path(company), method: :delete, data: {confirm: "Are you sure?"} %></td>
           </div>
+          
       <% end %> 
       
       <div class="col-sm-4">

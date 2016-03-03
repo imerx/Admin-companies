@@ -4,21 +4,19 @@
   <h1><%= @company.name %></h1><br>
   <div class="row">
     <div class="col-sm-4">
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Registrar ventas</p>
+      <%= link_to (image_tag "http://placehold.it/150x80?text=IMAGE", :alt =>  "company-new", :class =>"img-responsive md-image"), new_product_path, remote: true %>
+      <p>Registrar productos</p>
     </div>
     <div class="col-sm-4">
       <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
       <p>Ventas</p>
     </div>
     <div class="col-sm-4">
-            <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Pagar Biles </p>
+      <%= link_to (image_tag "http://placehold.it/150x80?text=IMAGE", :alt =>  "company-new", :class =>"img-responsive md-image"), new_product_path, remote: true %>
+      <p> Biles</p>
     </div>
   </div>
 </div><br>
-
-
 
 
 <div>
