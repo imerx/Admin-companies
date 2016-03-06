@@ -4,7 +4,7 @@
   <h1><%= @company.name %></h1><br>
   <div class="row">
     <div class="col-sm-4">
-      <%= link_to (image_tag "http://placehold.it/150x80?text=IMAGE", :alt =>  "company-new", :class =>"img-responsive md-image"), new_product_path, remote: true %>
+      <%= link_to (image_tag "http://placehold.it/150x80?text=IMAGE", :alt =>  "reg-new-product", :class =>"img-responsive md-image"), new_company_product_path(@company), remote: true %>
       <p>Registrar productos</p>
     </div>
     <div class="col-sm-4">
@@ -12,7 +12,7 @@
       <p>Ventas</p>
     </div>
     <div class="col-sm-4">
-      <%= link_to (image_tag "http://placehold.it/150x80?text=IMAGE", :alt =>  "company-new", :class =>"img-responsive md-image"), new_product_path, remote: true %>
+      <%= link_to (image_tag "http://placehold.it/150x80?text=IMAGE", :alt =>  "company-new", :class =>"img-responsive md-image"), new_company_product_path(@company), remote: true %>
       <p> Biles</p>
     </div>
   </div>
@@ -20,6 +20,7 @@
 
 
 <div>
+  <p><%= link_to " Listing productss",company_products_path(@company)  %></p>
 <%= link_to 'Edit company', edit_company_path(@company) %> |
 <%= link_to 'Back ', companies_path %> 
 </div>
