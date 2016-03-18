@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @company = Company.find(params[:company_id])
-    
   end
 
   def new
@@ -22,6 +21,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.update(params[:id], product_params)
   end
+  
   def destroy
   	@product = Product.find(params[:id])
     @product.destroy
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_path(@company) }
       format.json { head :no_content }
       format.js   { render :layout => false }
-   end
+    end
   end
   
   private

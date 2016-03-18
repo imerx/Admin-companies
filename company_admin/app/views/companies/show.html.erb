@@ -1,4 +1,4 @@
-<h1> show companies</h1>
+
 
 <div class="container text-center">
   <h1><%= @company.name %></h1><br>
@@ -8,8 +8,8 @@
       <p>Registrar productos</p>
     </div>
     <div class="col-sm-4">
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Ventas</p>
+      <%= link_to (image_tag "http://placehold.it/150x80?text=IMAGE", :alt =>  "reg-order", :class =>"img-responsive md-image"), new_company_order_path(@company), remote: true %>
+      <p>Registrar ventass</p>
     </div>
     <div class="col-sm-4">
       <%= link_to (image_tag "http://placehold.it/150x80?text=IMAGE", :alt =>  "company-new", :class =>"img-responsive md-image"), new_company_product_path(@company), remote: true %>

@@ -25,7 +25,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @products.each do |product| %>
+            <% @products.each do |product| %>
             <%= render "row", product: product %>
           <% end %>
         </tbody>
@@ -34,5 +34,5 @@
   </div>
 </div>
 <p>
-   <%= link_to "Back to company", new_company_path %>
+   <%= link_to "Back to company", companies_path %>
 </p>
