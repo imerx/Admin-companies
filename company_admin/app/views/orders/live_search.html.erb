@@ -1,0 +1,7 @@
+<% if @results.empty? %>
+Query not found
+<% else %>
+<%= @results.each do |product| %>
+   <%= link_to product.name, product %>
+<% end %>
+<% end %>

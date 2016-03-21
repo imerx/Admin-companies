@@ -1,0 +1,13 @@
+<% javascript_include_tag "prototype" %>
+
+<%= form_tag({:action => "new"}) %>
+<%= text_field_tag :searchtext %>
+<%= form_tag %>
+
+<%= observe_field(:searchtext,
+     :frecuency => 0.5,
+     :update => :results,
+     :with => 'query',
+     :url => {:action => :live_search}) %>
+     
+     <div id="results"></div>
