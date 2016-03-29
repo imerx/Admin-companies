@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h1>Payments</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1 text-right">
+      <%= link_to "Nuevo Producto",  new_company_payment_path(@company), remote: true, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Nombre</th>
+            <th>Monto</th>
+            <th>Estado</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @payments.each do |payment| %>
+            <%= render "pay_row", payment: payment %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<p>
+   <%= link_to "Back to company", companies_path %>
+</p>

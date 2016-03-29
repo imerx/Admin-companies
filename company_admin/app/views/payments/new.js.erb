@@ -1,0 +1,4 @@
+$('<%= j render "payment_form", title: "Registro de Pagos" %>').on('hidden.bs.modal', function (e) {
+  $(this).remove();
+  $('.modal-backdrop').remove();
+}).modal();

@@ -1,0 +1,6 @@
+<!--  code to modify payment -->
+
+$('<%= j render "payment_form", title: "Modificar Pago" %>').on('hidden.bs.modal', function (e) {
+  $(this).remove();
+  $('.modal-backdrop').remove();
+}).modal();

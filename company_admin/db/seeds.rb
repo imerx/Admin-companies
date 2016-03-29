@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+expense_list = ["Electricidad","Agua","Renta" ]
+
+expense_list.each do |name|
+  Expense.create( name: name)
+end

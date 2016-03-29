@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   
   resources :products
+  resources :payments
   resources :companies do
   resources :products
   resources :orders
+  resources :payments
   end
   
 

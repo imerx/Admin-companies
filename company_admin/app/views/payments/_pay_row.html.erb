@@ -1,0 +1,15 @@
+<!-- this partial create list of payments  render in index  -->
+
+<tr id="<%= payment.id %>">
+  <td><%= payment.company.name %></td>
+  <td><%= payment.expense.name %></td>
+  <td><%= number_to_currency(payment.amount, precision: 2) %></td>
+    <td><%= payment.status %></td>
+  <td>
+    <%= link_to "Editar", edit_company_payment_path(payment.company_id,payment), remote: true %>
+   
+  </td>
+  <td>
+    <%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_payment' %> 
+  </td>
+</tr>
