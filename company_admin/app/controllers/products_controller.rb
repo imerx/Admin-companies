@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @company = Company.find(params[:company_id])
+    
+  
   end
 
   def new
@@ -32,6 +34,7 @@ class ProductsController < ApplicationController
       format.js   { render :layout => false }
     end
   end
+    
   
   private
     def product_params

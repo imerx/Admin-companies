@@ -4,7 +4,7 @@
   <td><%= payment.company.name %></td>
   <td><%= payment.expense.name %></td>
   <td><%= number_to_currency(payment.amount, precision: 2) %></td>
-    <td><%= payment.status %></td>
+    <td><%= payment.created_at %></td>
   <td>
     <%= link_to "Editar", edit_company_payment_path(payment.company_id,payment), remote: true %>
    

@@ -1,32 +1,46 @@
 
-<div id="product-modal" class="modal fade">
+<div id="order-modal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
+      
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><%= title %></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+        </button>
+          <h4 class="modal-title"><%= title %></h4>
       </div>
       <!-- start rails code -->
-      
      
         <div class="modal-body">
+          <!-- search form -->
+          <div class="alert alert-danger" role="alert" style="display: none;"></div>
           
-          <div class="class="alert alert-danger" role="alert" style="display: none;"></div>
+
+
+      <%= form_for @order, remote: true do |f| %>
+
           <div class="form-group">
-            <div class="form-group">
-
-          </div> 
+            <%= f.hidden_field :company_id,:value => params[:user_id], class: "form-control input-lg" %>
           </div>
-  
-
-     <div id="results"></div>
-
-        </div>
-
+          <div class="form-group">
+            <%= f.hidden_field :user_id,:value => params[:user_id], class: "form-control input-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.hidden_field :_id,:value => params[:user_id], class: "form-control input-lg" %>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :check_out_at, class: "form-control input-lg", placeholder: "Nombre de Usuario" %>
+          </div>
+           <div class="form-group">
+            <%= f.text_field :total_price, class: "form-control input-lg", placeholder: "Nombre de Usuario" %>
+          </div>
+        
+        
+        </div><!-- /.modal-body -->
+                
         <div class="modal-footer">
-          
+             <%= f.submit  class: "btn btn-primary btn-lg btn-block" %>
         </div>
-   
+       <% end %>
 
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

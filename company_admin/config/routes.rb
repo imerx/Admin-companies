@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
   
+  resources :line_items
+  resources :carts
   resources :products
   resources :payments
+  resources :orders
   resources :companies do
   resources :products
   resources :orders
   resources :payments
   end
   
-
-
+ get 'search_products', to:"orders#search"
+ #get '/cart' =>"cart/index"
+  #get '/cart', to: "cart#index"
+ #get '/cart/clear', to: "cart#clearCart"
+ #get '/cart/id' , to:  "cart#add"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

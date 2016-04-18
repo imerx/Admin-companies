@@ -1,6 +1,6 @@
 <% if @payment.errors.empty? %>
   // add the row to the table, show alert and hide modal
-  $('table tbody').append(' <%= j render "pay_row", payment: @payment %>');
+  $('table tbody').append(' <%= j render "pay_row", payment: @payment, company_id:@company %>');
   $('.alert-success').html("El pago ha sido creado con éxito").show();
   $('#payment-modal').modal('hide');
 <% else %>
