@@ -11,12 +11,11 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
-    
-  .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-      min-height:200px;
+  /*  search fo */
+  #product-lookup-results {
+    margin-top: 20px;
   }
+  
 
   /* Hide the carousel text when the screen is less than 600 pixels wide */
   @media (max-width: 600px) {

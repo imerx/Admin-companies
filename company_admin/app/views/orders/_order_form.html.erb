@@ -1,0 +1,53 @@
+
+<div id="order-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><%= title %></h4>
+      </div>
+      <!-- start rails code -->
+            <div class="modal-body">
+      
+      <%= render 'product_search_form' %>
+      
+
+      <div id='results'></div>
+                     
+ <div id="cart">
+       <% if @cart %>
+        <%= hidden_div_if(@cart.line_items.empty?, :id => 'cart') do %>
+          <%= render @cart %>
+        <% end %>
+      <% end %>
+</div>
+      
+
+      <%= form_for @order, remote: true do |f| %>
+
+          
+          <div class="alert alert-danger" role="alert" style="display: none"> </div>
+          <div class="form-group">
+            <%= f.text_field :user_id,:value => params[:user_id], class: "form-control input-lg" %>
+          </div>
+          
+         <div class="form-group">
+            <%= f.text_field :check_out_at, :value => l(Time.current, format: :short), class: "form-control input-lg" %>
+          </div>
+           <div class="form-group">
+            <%= f.text_field :total_price, class: "form-control input-lg", placeholder: "Precio" %>
+          </div>
+        
+
+        </div>
+         
+        <div class="modal-footer">
+          <%= f.submit class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      <% end %>
+      
+      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,20 @@
+        <!-- This partial  form for search product -->
+  
+  <div id="product-lookup" >
+
+    <%= form_tag orders_path, method: :get, id: 'product-lookup-form' do %>
+     <div class="form-group row no-padding  text-center col-sm-10">
+      <div class="form-group">
+        <%= text_field_tag :search, params[:search], 
+                              placeholder:"Codigo o Nombre",autofocus: true,
+                              class: "form-control search-box input-lg" %>
+     </div>
+      <div class="col-md-2">
+        <%= button_tag( type: :submit, class: "btn btn-lg btn-success") do %>
+        <i class="fa fa-search "></i> Buscar producto
+        <% end %>
+      </div>
+    <% end %>
+    
+    </div>
+  </div>

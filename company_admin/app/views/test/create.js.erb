@@ -1,7 +1,7 @@
 <% if @order.errors.empty? %>
   // add the row to the table, show alert and hide modal
   $('table tbody').append(' <%= j render "order_row", order: @order %>');
-  $('.alert-success').html("La orden ha sido creado con éxito").show();
+  $('.alert-success').html("El producto ha sido creado con éxito").show();
   $('#order-modal').modal('hide');
 <% else %>
   // show first error
