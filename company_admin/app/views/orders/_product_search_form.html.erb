@@ -1,40 +1,35 @@
-        <!-- This partial  form for search product -->
-  
-
+<!-- This is a partial  form for search product --> 
 <%= form_tag search_products_path, method: :get, remote: true, id: 'product-lookup-form' do %>
-
-     
-    <div class="input-group">
-        <%= text_field_tag :search, params[:search], 
-                          placeholder:" Buscar producto por Codigo o Nombre",autofocus: true,
-                          class: "form-control search-box input-lg" %>
-
- 
-    <span class="input-group-btn">
-        <%= button_tag( type: :submit, class: "btn search btn-lg btn-success") do %>
-        <i class="glyphicon glyphicon-search"></i> 
-        <% end %>
-    </span>
+<div class="input-group">
+   <%= text_field_tag :search, params[:search], 
+      placeholder:" Buscar producto ",autofocus: true,
+      class: "form-control search-box input-lg" %> 
+   <span class="input-group-btn">
+   <%= button_tag( type: :submit, class: "btn search btn-lg btn-success") do %>
+   <i class="glyphicon glyphicon-search"></i> 
+   <% end %>
+   </span>
 </div>
 <% end %>
-    <!-- This code show results of search -->
-           <div id="product-lookup-results" >
-              <table class="table table-search">
-                <thead>
-                  <tr>
-                    <th>Codigo</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-          </div>
-<script>
-    $('.new_order').css({"margin-top" : "10px"})
-    $('.table-search thead').hide();
-</script>
+<!-- This code show results of search and append the results on tbody search.js -->
+<div id="product-lookup-results" >
+   <table class="table table-search">
+      <thead>
+         <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th></th>
+            <th></th>
+         </tr>
+      </thead>
+      <tbody>
+      </tbody>
+   </table>
+</div>
+         <!-- The table is hiden by default and  if is not empty  append data  seach.js-->      
+         <script>
+            $('.new_order').css({"margin-top" : "10px"})
+            $('.table-search thead').hide();
+         </script> 
    
