@@ -4,16 +4,25 @@
  <div class="my-cart">
     
 <div class="cart_title">Tu carrito</div>
-<table >
-  <%= render(cart.line_items) %>
- 
-  <tr class="total_line">
-    <td colspan="2">Total</td>
-    <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
-  </tr>
+<table class="table table-bordered ">
+     <thead>
+         <tr>
+             <th>Cantidad</th>
+             <th>Descripcion</th>
+             <th>Precio</th>
+         </tr>
+     </thead>
+      <tbody>
+         <%= render(cart.line_items) %>
+         
+        <tr class="total_line">
+          <td colspan="2">Total</td>
+          <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+        </tr>
+      </tbody>
 </table>
- <hr>
-   <%= link_to 'Vaciar Carrito', cart, method: :delete, :remote => true, :class => 'empty-cart' %> 
+ 
+   <%= button_to 'Vaciar Carrito', cart, method: :delete, :remote => true, :class => 'empty-cart' %> 
  </div>
 
    

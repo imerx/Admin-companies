@@ -5,6 +5,8 @@ class Order < ActiveRecord::Base
   
   belongs_to :company
   has_many :line_items, :dependent => :destroy
+  
+  #  method calling in order controller  action create
 
   def add_line_items_from_cart(cart)
     cart.line_items.each do |item|
@@ -12,6 +14,8 @@ class Order < ActiveRecord::Base
       line_items << item
     end
   end
-
+    def total_price
+      line_items.to_a.sum { |item| item.total_price }
+    end
 
 end

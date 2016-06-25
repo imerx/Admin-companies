@@ -1,5 +1,5 @@
 <!-- This is a partial  form for search product --> 
-<%= form_tag search_products_path, method: :get, remote: true, id: 'product-lookup-form' do %>
+<%= form_tag search_products_path, method: :get, remote: true, class: 'product-lookup   ' do %>
 <div class="input-group">
    <%= text_field_tag :search, params[:search], 
       placeholder:" Buscar producto ",autofocus: true,
@@ -12,14 +12,13 @@
 </div>
 <% end %>
 <!-- This code show results of search and append the results on tbody search.js -->
-<div id="product-lookup-results" >
-   <table class="table table-search">
+<div id="product-lookup-results " >
+   <table class="table table-search ">
       <thead>
          <tr>
             <th>Codigo</th>
-            <th>Nombre</th>
+            <th>Descripcion</th>
             <th>Precio</th>
-            <th></th>
             <th></th>
          </tr>
       </thead>
@@ -29,7 +28,7 @@
 </div>
          <!-- The table is hiden by default and  if is not empty  append data  seach.js-->      
          <script>
-            $('.new_order').css({"margin-top" : "10px"})
+            //$('.product-lookup').css({"margin-top" : "15px"})
             $('.table-search thead').hide();
          </script> 
    

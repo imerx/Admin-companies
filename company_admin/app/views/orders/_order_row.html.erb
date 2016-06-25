@@ -1,8 +1,8 @@
 <tr id="<%= order.id %>">
-  <td><%= order.id %></td>
+  <td><%= link_to order.id, order_path(order), remote: true %> </td>
   <td><%= order.check_out_at %></td>
   <td><%= number_to_currency(order.total_price, precision: 2) %></td>
   <td>
     <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_order' %> 
-  </td>
+  </td>  
 </tr>

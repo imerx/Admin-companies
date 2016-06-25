@@ -4,6 +4,7 @@ class PaymentsController < ApplicationController
   def index
     @payments = Payment.all
     @company = Company.find(params[:company_id])
+    
   end
 
   def new
