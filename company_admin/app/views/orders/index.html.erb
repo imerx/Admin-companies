@@ -2,17 +2,39 @@
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <div class="alert alert-success" role="alert" style="display: none;"></div>
-            <h1>Ventas</h1>
+            <h1>Ventas</h1>        
+
         </div>
     </div>
 
     <div class="row">
+
+        
         <div class="col-sm-10 col-sm-offset-1 text-right">
             <%=link_to "Nuevo order", new_company_order_path(@company), remote: true, class: "btn btn-primary" %>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
+          <!--  start scopes links container -->
+        <div id="scope-container" > 
+          <ul id="scope-list" class="nav nav-tabs">
+            <li class="active">
+            <%= link_to "RECIENTES ",company_orders_path(q:"actual") %>
+            </li>
+            <li>
+            <%= link_to "SEMANA",company_orders_path(q:"semanal") %>
+            </li>
+            <li>
+            <%= link_to "MES",company_orders_path(q:"mensual") %>
+            </li>
+            <li>
+            <%= link_to "TODO",company_orders_path(@company, q:"all") %>
+            </li>
+          </ul>          
+        </div><!-- end  scopes container -->
+          
+          <!-- start table for orders-->
             <table class="table">
                 <thead>
                     <tr>
@@ -27,8 +49,10 @@
                         <%=render "order_row", order: order %>
                     <% end %>
                 </tbody>
-            </table>
-        </div>
+            </table><!--  close table -->
+             <div  align="center" class="paginate"> <%= will_paginate @orders, renderer: BootstrapPagination::Rails  %></div>
+
+        </div> <!-- close col-sm-10 -->
     </div>
 
 </div><!-- close div container -->

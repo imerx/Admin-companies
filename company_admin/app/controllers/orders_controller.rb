@@ -1,11 +1,22 @@
 class OrdersController < ApplicationController
   
   def index
-    @orders = Order.all.order("created_at DESC")
     @line_items = LineItem.all
-    @company = Company.find(params[:company_id])    
-  end
-  
+    @company = Company.find(params[:company_id])     
+    #@orderss = Order.all.order("created_at DESC").limit(5) 
+    
+   case  # was case obj.class
+      when params[:q] ==="all"
+          @orders = Order.limit(100).order("created_at DESC").paginate(:page => params[:page],:per_page => 10)
+      when params[:q] ==="semanal"
+          @orders = Order.current_week.paginate(:page => params[:page], :per_page => 10)
+      when params[:q] === "mensual"
+          @orders = Order.current_month.paginate(:page => params[:page], :per_page => 10)
+      else
+          @orders = Order.current_day.paginate(:page => params[:page], :per_page => 10)
+   end
+  end   
+   
   def search
     if params[:search]
       @products = Product.search(params[:search]).order("created_at DESC").limit(2) 
@@ -19,10 +30,7 @@ class OrdersController < ApplicationController
     #@company = Company.find(params[:company_id])
     @cart = current_cart   
     
-    #if @cart.line_items.empty?
-      #redirect_to companies_url, :notice => "Your cart is empty"
-     # return
-   # end
+    
 
   end
   
@@ -39,6 +47,7 @@ class OrdersController < ApplicationController
     
    @order = Order.create(order_params)
    @order.add_line_items_from_cart(current_cart)
+   
     
    respond_to do |format|
     if @order.save
@@ -51,7 +60,8 @@ class OrdersController < ApplicationController
         format.js
        else
         @cart = current_cart
-        format.html { render :action => "new" }
+        
+        format.html {redirect_to (companies_path) }#render :action => "new" }
        # format.xml  { render :xml => @order.errors,
          # :status => :unprocessable_entity }
     end

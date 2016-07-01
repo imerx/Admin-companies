@@ -22,12 +22,7 @@
   .product-lookup {    
     margin: 20px;
     }
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; 
-    }
-  }
+ 
   
   .md-image {
     width:100%;
@@ -55,3 +50,24 @@
     width: 80%;
     margin-left: 10%;
  }
+ /*#scope list */
+#scope-container {
+   border: 2px;
+   }
+#scope-list a:hover {
+       color: #1a1a00;
+       text-decoration: none;      
+    }
+
+  #scope-list  {
+ font-weight: bold;
+  
+  }
+   
+   
+   
+   
+   
+   
+   
+   

@@ -28,14 +28,14 @@
             <%= f.hidden_field :company_id,:value => params[:company_id], class: "form-control input-lg" %>
             </div>
             <div class="form-group">
-               <%= f.hidden_field :check_out_at, :value => l(Time.current, format: :short), class: "form-control input-lg" %>
+               <%= f.hidden_field :check_out_at, :value => l(Time.zone.now, format: :short), class: "form-control input-lg" %>
             </div>
             <div class="form-group">
                <%= f.hidden_field :total_price, class: "form-control input-lg", placeholder: "TOTAL" %>
             </div>
          </div>
          <div class="modal-footer">
-            <%= f.submit class: "btn btn-primary btn-lg btn-block" %>
+            <%= f.submit class: "btn order-input btn-primary btn-lg btn-block" %>
          </div>
          <% end %>
       </div>

@@ -1,8 +1,12 @@
 <% if @order.errors.empty? %>
-  // add the row to the table, show alert and hide modal
+  // add the row to the table, show alert and hide modal  check if user has items added
+  <% if @order.line_items.blank? %>
+    alert(' Tu carrito esta vacio');
+    <% else %>
   $('table tbody').prepend(' <%= j render "order_row", order: @order %>');
   $('.alert-success').html("La orden ha sido creado con éxito").show();
   $('#order-modal').modal('hide');
+   <% end %>
 <% else %>
   // show first error
   alert('<%= @order.errors.full_messages[0] %>');
