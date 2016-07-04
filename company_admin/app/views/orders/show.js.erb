@@ -1,0 +1,5 @@
+$('<%= j render "invoice_modal", title: "Orden ##{@order.id}" %>').on('hidden.bs.modal', function (e) {
+  $(this).remove();
+  $('.modal-backdrop').remove();
+}).modal();
+
