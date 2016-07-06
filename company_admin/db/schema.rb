@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160704191756) do
+ActiveRecord::Schema.define(version: 20160706205146) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20160704191756) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin",           default: false
   end
 
 end

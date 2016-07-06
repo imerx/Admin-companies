@@ -12,6 +12,13 @@ Rails.application.routes.draw do
   end
   
  get 'search_products', to:"orders#search"
+ get 'signup', to: 'users#new'
+ 
+ get 'login', to: 'sessions#new'
+ post 'login', to: 'sessions#create'
+ delete 'logout', to: 'sessions#destroy'
+ 
+resources :users, except: [:new]
  #get '/cart' =>"cart/index"
   #get '/cart', to: "cart#index"
  #get '/cart/clear', to: "cart#clearCart"

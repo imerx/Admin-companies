@@ -1,0 +1,9 @@
+<% if @user.save %>
+  // add the row to the table, show alert and hide modal
+  $('table tbody').append(' <%= j render "user_row", user: @user %>');
+  $('.alert-success').html("El Usuario ha sido creado con éxito").show();
+  $('#user-modal').modal('hide');
+<% else %>
+  // show first error  
+  $('.alert').html('<%= @user.errors.full_messages[0] %>').show();
+<% end %>

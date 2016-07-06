@@ -1,0 +1,4 @@
+$('<%= j render "registration_form", title: "Registrar Usuario" %>').on('hidden.bs.modal', function (e) {
+  $(this).remove();
+  $('.modal-backdrop').remove();
+}).modal();

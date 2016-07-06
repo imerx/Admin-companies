@@ -11,10 +11,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+  <% if logged_in? %>
   <%= render 'layouts/messages' %>
   <%= render 'layouts/menu' %>
-  
+  <% end %>
   <%= yield %>
   
 

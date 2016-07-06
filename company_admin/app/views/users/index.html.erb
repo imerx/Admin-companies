@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="alert alert-success" role="alert" style="display: none;"></div>
+            <h1>Administracion de Usuarios</h1>        
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        
+        <div class="col-sm-10 col-sm-offset-1 text-right">
+            <%=link_to "Nuevo order", signup_path, remote: true %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+
+          
+          <!-- start table for orders-->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>USUARIO.</th>
+                        <th>EMAIL</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @users.each do |user| %>
+                        <%=render "user_row", user: user %>
+                    <% end %>
+                </tbody>
+            </table><!--  close table -->
+
+        </div> <!-- close col-sm-10 -->
+    </div>
+
+</div><!-- close div container -->
+<p>
+    <%=link_to "volver", companies_path %>
+</p>

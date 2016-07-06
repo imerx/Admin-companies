@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   
+  
+  
   def index
     @line_items = LineItem.all
     @company = Company.find(params[:company_id])     
@@ -29,9 +31,6 @@ class OrdersController < ApplicationController
     @order = Order.new
     #@company = Company.find(params[:company_id])
     @cart = current_cart   
-    
-    
-
   end
   
   def show    
