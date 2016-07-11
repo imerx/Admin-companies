@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     
     def create
       @user = User.new(user_params)
-      session[:user_id] = User.id
     end
     def destroy
         @user = User.find(params[:id])
@@ -32,7 +31,7 @@ class UsersController < ApplicationController
     private
     
     def user_params
-      params.require(:user).permit(:username, :email, :password)
+      params.require(:user).permit(:username, :email, :password, :admin)
     end
     # set the user to be ready only for action specified above  if  use in a future
     def set_user

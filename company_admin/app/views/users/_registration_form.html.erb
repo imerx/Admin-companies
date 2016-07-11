@@ -1,37 +1,37 @@
 
 <div id="user-modal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><%= title %></h4>
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"><%= title %></h4>
+         </div>
+         <!-- start rails code  form for create user-->
+         <%= form_for @user, remote: true do |f| %>
+         <div class="modal-body">
+            <div class="alert alert-danger" role="alert" style="display: none;"></div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+               <%= f.text_field :username, class: "form-control input-lg", placeholder: "Usuario" %>
+            </div>
+            <div class="form-group">
+               <%= f.email_field :email, class: "form-control input-lg", placeholder: "Email" %>
+            </div>
+            <div class="form-group">
+               <%= f.password_field :password, class: "form-control input-lg", placeholder: "Password" %>
+            </div>
+            <div class="form-group">
+               <p> Es Administrador?  <%= f.check_box :admin %></p>
+            </div>
+         </div>
+         <div class="modal-footer">
+            <%= f.submit class: "btn btn-primary btn-lg btn-block" %>
+         </div>
+         <% end %>
       </div>
-      <!-- start rails code -->
-      <%= form_for @user, remote: true do |f| %>
-        <div class="modal-body">
-          
-          <div class="alert alert-danger" role="alert" style="display: none;"></div>
-          <div class="form-group">
-          </div>
-          <div class="form-group">
-            <%= f.text_field :username, class: "form-control input-lg", placeholder: "Usuario" %>
-          </div>
-          <div class="form-group">
-            <%= f.email_field :email, class: "form-control input-lg", placeholder: "Email" %>
-          </div>
-          <div class="form-group">
-            <%= f.password_field :password, class: "form-control input-lg", placeholder: "Password" %>
-          </div>
-
-        </div>
-
-        <div class="modal-footer">
-          <%= f.submit class: "btn btn-primary btn-lg btn-block" %>
-        </div>
-      <% end %>
-      
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

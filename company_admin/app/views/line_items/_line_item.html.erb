@@ -7,6 +7,7 @@
 <tr>
   <td><%= line_item.quantity %>&times;</td>
   <td><%= line_item.product.name %></td>
+  <!-- lineitem.total_price  method created in lineitem model  to get the total price of  products in cart--> 
   <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
 </tr>
 

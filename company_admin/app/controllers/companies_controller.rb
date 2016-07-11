@@ -3,6 +3,19 @@ class CompaniesController < ApplicationController
 
 def index
 	@companies = Company.all
+
+	@today_sales = Order.current_day.sum(:total_price) 
+ 
+end
+# this action fire details sales in 
+def sales_info
+    @today_sales = Order.current_day.sum(:total_price) 
+	@week_sales = Order.current_week.sum(:total_price) 
+	@month_sales = Order.current_month.sum(:total_price) 
+end
+
+def payments_info
+    
 end
 
 def show

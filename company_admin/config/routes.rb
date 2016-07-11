@@ -19,6 +19,10 @@ Rails.application.routes.draw do
  delete 'logout', to: 'sessions#destroy'
  
 resources :users, except: [:new]
+
+get "view_sales", to: "companies#sales_info"
+
+
  #get '/cart' =>"cart/index"
   #get '/cart', to: "cart#index"
  #get '/cart/clear', to: "cart#clearCart"

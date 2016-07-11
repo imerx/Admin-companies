@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     @company = Company.find(params[:company_id])     
     #@orderss = Order.all.order("created_at DESC").limit(5) 
     
-   case  # was case obj.class
+   case  
       when params[:q] ==="all"
           @orders = Order.limit(100).order("created_at DESC").paginate(:page => params[:page],:per_page => 10)
       when params[:q] ==="semanal"
@@ -30,7 +30,8 @@ class OrdersController < ApplicationController
   def new       
     @order = Order.new
     #@company = Company.find(params[:company_id])
-    @cart = current_cart   
+    @cart = current_cart 
+
   end
   
   def show    

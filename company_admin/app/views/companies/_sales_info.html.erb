@@ -1,0 +1,24 @@
+<div class="sales-table pricing-three-column row">
+        <h2 align:center>Ventas Registradas </h2>
+        <div class="plan col-sm-4 col-lg-4">
+          <div class="hoy">
+            <h3>Hoy</h3>
+          </div>
+           <h4> <%=number_to_currency(@today_sales )%></h4>
+        </div>
+        
+        <div style="z-index:55;" class="plan col-sm-4 col-lg-4">
+          <div class="semana">
+            <h3> Semana Actual </h3>
+          </div>
+           <h4> <%=number_to_currency(@week_sales )%></h4>
+        </div>
+        
+        <div class="plan col-sm-4 col-lg-4">
+          <div class="mensual">
+            <h3>Mes Actual</h3>
+          </div>
+           <h4> <%=number_to_currency(@month_sales )%></h4>
+        </div>
+        
+    </div>

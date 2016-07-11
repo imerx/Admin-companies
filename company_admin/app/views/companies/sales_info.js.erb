@@ -1,0 +1,5 @@
+$('<%= j render "sales_info_modal", title: "Monto de ventas" %>').on('hidden.bs.modal', function (e) {
+  $(this).remove();
+  $('.modal-backdrop').remove();
+}).modal();
+
