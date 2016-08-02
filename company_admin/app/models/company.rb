@@ -4,5 +4,5 @@ class Company < ActiveRecord::Base
      has_many :products
      has_many :orders 
      has_many :payments
-     has_many :payments, :through => :expenses
+     #has_many :payments, :through => :expenses
 end

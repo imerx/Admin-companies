@@ -9,9 +9,16 @@ def index
 end
 # this action fire details sales in 
 def sales_info
+    
+    ### Incomes ###
+    @orders = Order.current_week
     @today_sales = Order.current_day.sum(:total_price) 
 	@week_sales = Order.current_week.sum(:total_price) 
 	@month_sales = Order.current_month.sum(:total_price) 
+	
+	###  Payments,expenses###
+	@week_expenses = Payment.current_week
+	
 end
 
 def payments_info

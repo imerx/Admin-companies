@@ -1,5 +1,5 @@
 <div class="sales-table pricing-three-column row">
-        <h2 align:center>Ventas Registradas </h2>
+      
         <div class="plan col-sm-4 col-lg-4">
           <div class="hoy">
             <h3>Hoy</h3>
@@ -21,4 +21,44 @@
            <h4> <%=number_to_currency(@month_sales )%></h4>
         </div>
         
-    </div>
+</div>
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>DETALLE</th>
+                        <th>INGRESOS</th>
+                        <th> TOTAL</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% @orders.each do |order| %>
+                    <tr id="<%= order.id %>">
+                      <td><%=order.total_price %></td>
+                      <td><%= link_to order.id, order_path(order), remote: true %> </td>
+                      <td><%= number_to_currency(order.total_price, precision: 2) %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+                
+            </table><!--  close table -->
+            
+                        <table class="table table-bordered">
+
+                <thead>
+                    <tr>                  
+                        <th>Ingresos</th>
+                        <th>Gastos</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td> <%=number_to_currency(@week_sales )%> </td>
+                    <td> <%=number_to_currency(@week_expenses )%> </td>
+                    <td>3</td>
+                    </tr>                           
+                </tbody>
+            </table>

@@ -15,11 +15,10 @@
       
       <div class="col-sm-4">
          <div class="well">
-            <p> Ventas de Hoy: <%=number_to_currency(@today_sales )%></p>
-              <p><%= link_to "Ver Montos anteriores ", view_sales_path, remote: true %> </p>
+              <p><%= link_to "Corte Semanal ", view_sales_path, remote: true %> </p>
          </div>
          <div class="well">
-            <p>Gastos.</p>
+                      <p> Ventas de Hoy: <%=number_to_currency(@today_sales )%></p>
          </div>
       </div>
       
